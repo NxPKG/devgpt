@@ -19,6 +19,7 @@ if TYPE_CHECKING:
     from devgpt import Agent, ConversableAgent, OpenAIWrapper
     from devgpt.oai.anthropic import AnthropicClient
     from devgpt.oai.cohere import CohereClient
+    from devgpt.oai.bedrock import BedrockClient
     from devgpt.oai.gemini import GeminiClient
     from devgpt.oai.groq import GroqClient
     from devgpt.oai.mistral import MistralAIClient
@@ -215,6 +216,7 @@ class FileLogger(BaseLogger):
             | TogetherClient
             | GroqClient
             | CohereClient
+            | BedrockClient
         ),
         wrapper: OpenAIWrapper,
         init_args: Dict[str, Any],
