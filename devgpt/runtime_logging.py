@@ -14,6 +14,7 @@ from devgpt.logger.logger_factory import LoggerFactory
 if TYPE_CHECKING:
     from devgpt import Agent, ConversableAgent, OpenAIWrapper
     from devgpt.oai.anthropic import AnthropicClient
+    from devgpt.oai.bedrock import BedrockClient
     from devgpt.oai.cohere import CohereClient
     from devgpt.oai.gemini import GeminiClient
     from devgpt.oai.groq import GroqClient
@@ -113,7 +114,15 @@ def log_new_wrapper(wrapper: OpenAIWrapper, init_args: Dict[str, Union[LLMConfig
 
 def log_new_client(
     client: Union[
-        AzureOpenAI, OpenAI, GeminiClient, AnthropicClient, MistralAIClient, TogetherClient, GroqClient, CohereClient
+        AzureOpenAI,
+        OpenAI,
+        GeminiClient,
+        AnthropicClient,
+        MistralAIClient,
+        TogetherClient,
+        GroqClient,
+        CohereClient,
+        BedrockClient,
     ],
     wrapper: OpenAIWrapper,
     init_args: Dict[str, Any],
